@@ -1,0 +1,73 @@
+<section>
+  <div class="container">
+    <a href="/product-dashboard" class="btn btn-primary px-3 mt-5"><i class="fa-solid fa-shop"></i> Dashboard</a>
+    <a href="/shop" class="btn btn-success px-3 mt-5"><i class="fa-regular fa-eye"></i> View Store</a>
+
+    <!-- page content here -->
+    <div class="row">
+      <div class="col-lg-9">
+        <div class="page-content mt-3 border p-4 mb-5 rounded shadow-sm">
+          <div class="row">
+            <div class="single-product">
+              <div class="single-product-image">
+                <img class="w-100 border m-0 rounded" style="height: 500px; object-fit: cover" src="/product_photo/<%= singleProduct.photo %>" alt="" />
+              </div>
+              <div class="product-quic-details">
+                <div class="row align-items-center">
+                  <div class="col-lg-10">
+                    <h3 class="my-3 mb-2"><%= singleProduct.name %></h3>
+
+                    <% if (!singleProduct.salePrice) { %>
+                    <h5 class="regular-price my-2"><span>TK. </span><%= singleProduct.regularPrice %></h5>
+                    <% } %> <% if (singleProduct.salePrice) { %>
+
+                    <h5 class="regular-price my-2 position-relative">
+                      <span>TK. </span> <del class="text-danger"><%= singleProduct.regularPrice %></del>
+                      <span class="sale-price my-2"><%= singleProduct.salePrice %></span>
+                    </h5>
+
+                    <% } %>
+                  </div>
+                  <div class="col-lg-2">
+                    <a href="#" class="btn btn-primary w-100 mt-4">Add to cart</a>
+                    <p class="text-muted" style="font-size: 14px;">Available Stock: <%= singleProduct.stock %></p>
+                  </div>
+                </div>
+              </div>
+              <hr />
+              <p class="product-discription mt-3">
+                Sed non fringilla ex. Aenean quis leo sollicitudin, dapibus nunc a, ultricies sapien. Vestibulum finibus sagittis enim. Nunc tincidunt
+                condimentum quam et ornare. Fusce risus tortor, consequat in accumsan sit amet, ullamcorper vel est. Donec et elementum massa. Pellentesque
+                viverra, lorem nec consequat blandit, mi lorem tristique odio, eu dapibus velit nisl at felis. Vestibulum rhoncus felis ac felis venenatis
+                euismod. Curabitur consequat felis urna, quis laoreet lorem aliquam eu. <br /><br />
+
+                Etiam rutrum vitae ex quis tempus. Nulla molestie fermentum consectetur. Maecenas fringilla augue sed lectus efficitur consequat. Morbi vel
+                sagittis orci.Proin et mauris non ligula pharetra sollicitudin. Nunc mollis arcu a massa iaculis consequat. Nulla felis orci, pharetra id tortor
+                eu, varius consequat orci. Suspendisse vel rhoncus diam. Aliquam sit amet ipsum ullamcorper, tristique ligula eget, blandit justo. Maecenas ante
+                ante, ornare et convallis ac, dignissim eu nunc. Maecenas eros dolor, cursus sed vehicula fringilla, fermentum ut tortor. <br /><br />
+
+                Duis mollis lorem ac justo semper interdum. Nam ex sapien, sodales vitae purus non, convallis porta arcu. Duis porta neque nec est tincidunt
+                molestie a ut augue. Phasellus in tortor risus. Proin congue ullamcorper aliquet. Suspendisse at ipsum enim. Quisque pellentesque elit a erat
+                gravida commodo. Suspendisse eget elit id massa viverra sagittis id et felis. Pellentesque habitant morbi tristique senectus et netus et
+                malesuada fames ac turpis egestas. Nunc tempus ante augue, quis scelerisque nisi scelerisque vitae. Morbi eget ligula id nisl blandit dapibus.
+                Integer id fringilla dolor, porta blandit sem. <br /><br />
+
+                Nulla placerat neque ut nisl rutrum, sed pharetra ex commodo. Nullam id lacus est. Suspendisse eget porta odio. Praesent semper, mi ut ornare
+                finibus, urna nunc elementum elit, quis laoreet lacus mauris id mi. Fusce sed bibendum ex. Proin finibus tincidunt neque. Nam non turpis varius,
+                laoreet nisl ac, auctor neque. Vivamus ipsum metus, scelerisque vitae accumsan sit amet, cursus eu est. Mauris sit amet libero vulputate, mollis
+                arcu ut, semper tellus. Etiam eleifend lacus ac sagittis blandit.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-3">
+        <div class="sidevar mt-3 border p-4 rounded shadow-sm">
+          <img class="w-100 rounded" src="/assets/img/ads.png" alt="" />
+          <img class="w-100 mt-4 rounded" src="/assets/img/ww.png" alt="" />
+          <img class="w-100 mt-4 rounded" src="/assets/img/ads2.jpg" alt="" />
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

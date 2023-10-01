@@ -1,0 +1,37 @@
+<section>
+  <div class="container">
+    <a href="/add-product" class="btn btn-primary px-3 mt-5" id="backButton"><i class="fa-solid fa-plus"></i> Add New Product</a>
+    <a href="/shop" class="btn btn-success px-3 mt-5"><i class="fa-regular fa-eye"></i> View Store</a>
+    <div class="page-content mt-3 border p-4 rounded">
+      <table id="product-table" class="display table-responsive-md">
+        <thead>
+          <tr>
+            <th>#</th>
+            <th>Photo</th>
+            <th>Name</th>
+            <th>Price</th>
+            <th>Stock</th>
+            <th>Action</th>
+          </tr>
+        </thead>
+        <tbody>
+          <% products.forEach((product, index) => { %> 
+
+          <tr>
+            <td><%= index + 1 %></td>
+            <td><img class="porduct-image" src="/product_photo/<%= product.photo %>" alt="<%= product.name %>" /></td>
+            <td><%= product.name %></td>
+            <td><%= product.regularPrice %></td>
+            <td><%= product.stock %></td>
+            <td>
+              <a href="/single/<%= product.slug %>" class="view btn btn-primary btn-sm"><i class="fa-solid fa-eye"></i></a>
+              <a href="/edit/<%= product.id %>" class="edite btn btn-warning btn-sm"><i class="fa-solid fa-pen-to-square"></i></a>
+              <a href="/product-delete/<%= product.id %>" class="delete btn btn-danger btn-sm"><i class="fa-solid fa-trash"></i></a>
+            </td>
+          </tr>
+          <% }) %>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>

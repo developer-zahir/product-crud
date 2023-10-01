@@ -1,0 +1,60 @@
+<section>
+  <div class="container">
+    <a href="/product-dashboard" class="btn btn-primary px-3 mt-5"><i class="fa-solid fa-shop"></i> Dashboard</a>
+    <a href="/shop" class="btn btn-success px-3 mt-5"><i class="fa-regular fa-eye"></i> View Store</a>
+
+    <!-- page content here -->
+    <div class="page-content mt-3 border p-4 rounded shadow-sm">
+      
+
+      <div class="row">
+        <div class="col-lg-9">
+          <div class="row">
+            <!-- product-item -->
+            <% products.forEach((product, index) => { %>
+            <div class="col-lg-4 col-md-6 ">
+              <a href="single/<%= product.slug %>" class="product-anchor">
+                <div class="product-wrapper card p-2">
+                  <div class="product-image">
+                    <img style="width: 100%; height: 240px; object-fit: cover" src="/product_photo/<%= product.photo %>" alt="" />
+                  </div>
+                  <div class="product-quic-details">
+                    <h3 class="my-3 mb-1"><%= product.name %></h3>
+      
+                    <% if (!product.salePrice) { %>
+                    <h5 class="regular-price my-2"><span>TK. </span><%= product.regularPrice %></h5>
+                    <% } %> <% if (product.salePrice) { %>
+                    
+                      <h5 class="regular-price my-1 position-relative">
+                        <span>TK. </span> <del class="text-danger"><%= product.regularPrice %></del>
+                        <span class="sale-price my-2"><%= product.salePrice %></span>
+                      </h5>
+                
+                    
+                    <% } %>
+      
+                    <a href="single/<%= product.slug %>" class="btn btn-primary w-100 mt-3">View Product</a>
+                  </div>
+                </div>
+
+              </a>
+            </div>
+    
+            <% }) %>
+          </div>
+        </div>
+        <div class="col-lg-3">
+          <div class="sidevar mt-3 border p-4 rounded shadow-sm">
+            <img class="w-100 rounded" src="/assets/img/ads.png" alt="" />
+            <img class="w-100 mt-4 rounded" src="/assets/img/ww.png" alt="" />
+            <img class="w-100 mt-4 rounded" src="/assets/img/ads2.jpg" alt="" />
+          </div>
+        </div>
+      </div>
+
+
+
+
+    </div>
+  </div>
+</section>

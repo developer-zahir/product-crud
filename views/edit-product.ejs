@@ -1,0 +1,78 @@
+<section>
+    <div class="container">
+      <a href="/product-dashboard" class="btn btn-primary px-3 mt-5"><i class="fa-solid fa-shop"></i> Dashboard</a>
+      <a href="/shop" class="btn btn-success px-3 mt-5"><i class="fa-regular fa-eye"></i> View Store</a>
+     
+      <!-- page content here -->
+      <div class="page-content mt-3 border p-4 rounded shadow-sm">
+        <form action="/update/<%= editProduct.id %>" enctype="multipart/form-data" method="POST">
+          <div class="form-header">
+            <div class="row align-content-center ">
+              <div class="col-lg-8 col-md-9">
+                <h2 class="mb-3">Update product</h2>
+              </div>
+              <div class="col-lg-4 col-md-3 text-end">
+                <button class="btn btn-sm btn-danger px-3 " id="backButton">Back</button>
+                <a class="btn btn-sm btn-warning px-3" href="/single/<%= editProduct.slug %>">View</a>
+              </div>
+            </div>
+          </div>
+  
+          <div class="form-floating mb-3">
+            <input type="text" class="form-control" id="name" placeholder="Product name" name="name" value="<%= editProduct.name %>"  />
+            <label for="name">Product name</label>
+          </div>
+  
+          <div class="row">
+            <div class="col-lg-4">
+              <div class="form-floating">
+                <input type="text" class="form-control" id="regular-price" placeholder="Regula price" name="regularPrice" value="<%= editProduct.regularPrice %>"  />
+                <label for="regular-price">Regular price</label>
+              </div>
+            </div>
+            <div class="col-lg-4">
+              <div class="form-floating">
+                <input type="text" class="form-control" id="sale-price" placeholder="Sale price" name="salePrice" value="<%= editProduct.salePrice %>"/>
+                <label for="sale-price">Sale price</label>
+              </div>
+            </div>
+            <div class="col-lg-4">
+              <div class="form-floating">
+                <input type="text" class="form-control" id="stock" placeholder="Stock" name="stock" value="<%= editProduct.stock %>"/>
+                <label for="stock">Stock</label>
+              </div>
+            </div>
+          </div>
+  
+          <div class="row mt-3">
+            <div class="col-lg-8">
+              <div class="form-floating">
+                <textarea class="form-control" placeholder="Product discription" id="product-discription" style="height: 395px" name="productDiscription" readonly>
+Sed non fringilla ex. Aenean quis leo sollicitudin, dapibus nunc a, ultricies sapien. Vestibulum finibus sagittis enim. Nunc tincidunt
+condimentum quam et ornare. Fusce risus tortor, consequat in accumsan sit amet, ullamcorper vel est. Donec et elementum massa. Pellentesque viverra, lorem nec consequat blandit, mi lorem tristique odio, eu dapibus velit nisl at felis. Vestibulum rhoncus felis ac felis
+venenatis euismod. Curabitur consequat felis urna, quis laoreet lorem aliquam eu. 
+                  
+Etiam rutrum vitae ex quis tempus. Nulla molestie fermentum
+consectetur. Maecenas fringilla augue sed lectus efficitur consequat. Morbi vel sagittis orci.Proin et mauris non ligula pharetra sollicitudin. Nunc mollis arcu a massa iaculis consequat. 
+  
+Sed non fringilla ex. Aenean quis leo sollicitudin, dapibus nunc a, ultricies sapien. Vestibulum finibus sagittis enim. Nunc tincidunt
+condimentum quam et ornare. Fusce risus tortor, consequat in accumsan sit amet, ullamcorper vel est. Donec et elementum massa.
+                </textarea>
+                <label for="product-discription">Product discription</label>
+                <button class="btn btn-primary mt-3" style="width: 100%" type="submit">Update product</button>
+              </div>
+            </div>
+  
+            <div class="col-lg-4">
+              <input type="file" name="productPhoto" class="form-control edite-photo-select"  value="/product_photo/<%= editProduct.photo %>" />
+
+              <div class="product-image-box mt-3">
+                <img class="rounded img-fluid" id="image-preview" src="/product_photo/<%= editProduct.photo %>" alt="" />
+              </div>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+  </section>
+  
