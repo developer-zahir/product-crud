@@ -56,6 +56,18 @@
       background-position: center center;
       background-repeat: no-repeat;
   }
+
+@media (max-width: 991.98px) {
+    .banner-section{
+        height: 400px;
+    }
+  
+}
+
+
+
+
+
   .product-anchor{
       display: inline-block;
       color: unset;
