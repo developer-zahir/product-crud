@@ -6,77 +6,76 @@
   border-radius: 3px;
 }
 
-
-
-
 /* .table-caption{
     background: #ddd;
     padding: 20px 10px;
 } */
-input:focus{
-    outline: unset;
+input:focus {
+  outline: unset;
 }
-
-
-
-
-
 
 /* add product  */
-.product-image-box{
-    position: relative;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+.product-image-box {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
-.product-image-box button{
-    position: absolute;
-    top: 0;
-    left: 0;
-    bottom: 0;
-    right: 0;
-    margin: auto;
-    width: 40px;
-    height: 40px;
-    opacity: 0;
-    transition: .4s;
+.product-image-box button {
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  margin: auto;
+  width: 40px;
+  height: 40px;
+  opacity: 0;
+  transition: 0.4s;
 }
-.product-image-box:hover button{
-    opacity: 1;
+.product-image-box:hover button {
+  opacity: 1;
 }
-
-
 
 /* shop page */
-.product-anchor{
-    display: inline-block;
-    color: unset;
-    text-decoration: none;
-}
-.product-wrapper{
-    transition: .4s;
-}
-.product-wrapper:hover{
-  box-shadow: 0 5px  10px rgba(0, 0, 0, 0.147);
+.banner-section {
+  width: 100%;
+  height: 600px;
+  background: url("/assets/img/banner.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center center;
 }
 
+.product-anchor {
+  display: inline-block;
+  color: unset;
+  text-decoration: none;
+}
+.product-wrapper {
+  transition: 0.4s;
+}
+.product-wrapper:hover {
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.147);
+}
 
-.h5, h5 {
-    font-size: 1rem;
-    margin: 0;
-    margin-top: -12px;
+.h5,
+h5 {
+  font-size: 1rem;
+  margin: 0;
+  margin-top: -12px;
 }
 
 .product-quic-details h3.my-3 {
-    height: 35px;
-    overflow: hidden;
+  height: 35px;
+  overflow: hidden;
 }
 
 span.sale-price {
-    background: green;
-    color: white;
-    display: inline-block;
-    padding: 0 4px 2px 4px;
-    margin: 0 !important;
-    box-sizing: border-box;
+  background: green;
+  color: white;
+  display: inline-block;
+  padding: 0 4px 2px 4px;
+  margin: 0 !important;
+  box-sizing: border-box;
 }
